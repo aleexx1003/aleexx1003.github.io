@@ -5,9 +5,15 @@
     <title>Alex Salinero - Portfolio</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Portfolio profesional de Alex Salinero, estudiante de Ingeniería Informática enfocado en gestión de proyectos, consultoría tecnológica y arquitectura de datos." />
+    <!-- Fuente moderna -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+<div class="bg-texture"></div>
+
 <header class="header">
     <div class="container nav-container">
         <div class="logo">
@@ -27,7 +33,7 @@
 
 <section class="hero">
     <div class="container hero-grid">
-        <div class="hero-text">
+        <div class="hero-text" data-reveal>
             <p class="hero-kicker">Ingeniería Informática · Consultoría · Datos</p>
             <h1>Alex Salinero</h1>
             <p class="hero-subtitle">
@@ -39,10 +45,9 @@
             <div class="hero-tags">
                 <span>Comunicación técnico-funcional</span>
                 <span>Pensamiento sistemático</span>
-                <span>Colaboración en entornos ágiles</span>
+                <span>Colaboración ágil</span>
             </div>
             <div class="hero-actions">
-                <!-- Cambia el nombre del PDF si subes uno distinto -->
                 <a class="btn btn-primary" href="cv-alex-salinero.pdf" target="_blank">
                     Descargar CV
                 </a>
@@ -50,22 +55,46 @@
                     Contactar conmigo
                 </a>
             </div>
-        </div>
-        <div class="hero-photo">
-            <!-- Sube una foto como img/foto-alex.jpg -->
-            <div class="photo-frame">
-                <img src="img/foto-alex.jpg" alt="Foto de Alex Salinero" />
+            <div class="hero-mini">
+                <span>📍 España</span>
+                <span>Carnet B</span>
+                <span>Coche propio</span>
+                <span>Disponibilidad para viajar</span>
             </div>
-            <p class="hero-location">
-                España · Carnet B · Coche propio · Disponibilidad para viajar
-            </p>
         </div>
+
+        <div class="hero-photo-wrapper" data-reveal>
+            <div class="hero-orbit orbit-1"></div>
+            <div class="hero-orbit orbit-2"></div>
+            <div class="hero-card">
+                <div class="photo-frame">
+                    <!-- Recuerda subir img/foto-alex.jpg -->
+                    <img src="img/foto-alex.jpg" alt="Foto de Alex Salinero" />
+                </div>
+                <div class="hero-card-body">
+                    <h2>Alex Salinero</h2>
+                    <p>Estudiante de Ingeniería Informática (UCLM)</p>
+                    <div class="hero-pill-row">
+                        <span class="pill">Consultoría tecnológica</span>
+                        <span class="pill">Calidad software</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-floating-badge badge-1">Python · Java</div>
+            <div class="hero-floating-badge badge-2">SQL · MongoDB</div>
+            <div class="hero-floating-badge badge-3">Scrum · BPMN</div>
+        </div>
+    </div>
+
+    <div class="scroll-indicator">
+        <span>Scroll</span>
+        <div class="scroll-wheel"></div>
     </div>
 </section>
 
 <main>
     <!-- SOBRE MÍ -->
-    <section id="sobre-mi" class="section">
+    <section id="sobre-mi" class="section" data-reveal>
         <div class="container section-grid">
             <div>
                 <h2>Sobre mí</h2>
@@ -81,7 +110,7 @@
                     y la mejora continua sean prioridades.
                 </p>
             </div>
-            <aside class="pill-box">
+            <aside class="pill-box glass">
                 <h3>Soft skills</h3>
                 <ul>
                     <li>Comunicación técnico-funcional</li>
@@ -106,12 +135,12 @@
     </section>
 
     <!-- EXPERIENCIA -->
-    <section id="experiencia" class="section section-alt">
+    <section id="experiencia" class="section section-alt" data-reveal>
         <div class="container">
             <h2>Experiencia y proyectos</h2>
 
             <div class="timeline">
-                <article class="timeline-item">
+                <article class="timeline-item glass">
                     <div class="timeline-header">
                         <h3>Académica en proyectos de ingeniería</h3>
                         <span class="timeline-tag">UCLM · 2022 – Actualidad</span>
@@ -127,7 +156,7 @@
                     </ul>
                 </article>
 
-                <article class="timeline-item">
+                <article class="timeline-item glass">
                     <div class="timeline-header">
                         <h3>Proyectos personales</h3>
                         <span class="timeline-tag">Autodidacta</span>
@@ -147,11 +176,11 @@
     </section>
 
     <!-- EDUCACIÓN -->
-    <section id="educacion" class="section">
+    <section id="educacion" class="section" data-reveal>
         <div class="container">
             <h2>Educación</h2>
             <div class="cards-grid">
-                <article class="card">
+                <article class="card glass">
                     <h3>Grado en Ingeniería Informática</h3>
                     <p class="card-subtitle">Escuela Superior de Informática · UCLM</p>
                     <p class="card-meta">2022 – 2026</p>
@@ -162,7 +191,7 @@
                     </p>
                 </article>
 
-                <article class="card">
+                <article class="card glass">
                     <h3>Bachillerato Tecnológico Bilingüe</h3>
                     <p class="card-subtitle">IES Estados del Duque</p>
                     <p class="card-meta">2020 – 2022</p>
@@ -176,11 +205,11 @@
     </section>
 
     <!-- HABILIDADES -->
-    <section id="habilidades" class="section section-alt">
+    <section id="habilidades" class="section section-alt" data-reveal>
         <div class="container">
             <h2>Habilidades técnicas</h2>
             <div class="skills-grid">
-                <div class="skills-group">
+                <div class="skills-group glass">
                     <h3>Lenguajes</h3>
                     <ul>
                         <li>Python</li>
@@ -189,7 +218,7 @@
                         <li>C</li>
                     </ul>
                 </div>
-                <div class="skills-group">
+                <div class="skills-group glass">
                     <h3>Web &amp; Frontend</h3>
                     <ul>
                         <li>HTML, CSS</li>
@@ -197,14 +226,14 @@
                         <li>TypeScript</li>
                     </ul>
                 </div>
-                <div class="skills-group">
+                <div class="skills-group glass">
                     <h3>Bases de datos</h3>
                     <ul>
                         <li>SQL</li>
                         <li>MongoDB</li>
                     </ul>
                 </div>
-                <div class="skills-group">
+                <div class="skills-group glass">
                     <h3>Herramientas</h3>
                     <ul>
                         <li>VS Code, Visual Studio, Eclipse</li>
@@ -212,7 +241,7 @@
                         <li>Microsoft 365</li>
                     </ul>
                 </div>
-                <div class="skills-group">
+                <div class="skills-group glass">
                     <h3>Cloud &amp; DevOps</h3>
                     <ul>
                         <li>Azure</li>
@@ -220,7 +249,7 @@
                         <li>Git, GitHub, Azure DevOps</li>
                     </ul>
                 </div>
-                <div class="skills-group">
+                <div class="skills-group glass">
                     <h3>Metodologías y otros</h3>
                     <ul>
                         <li>Scrum</li>
@@ -233,7 +262,7 @@
     </section>
 
     <!-- CERTIFICADOS -->
-    <section id="certificados" class="section">
+    <section id="certificados" class="section" data-reveal>
         <div class="container">
             <h2>Certificados</h2>
             <p class="section-intro">
@@ -241,8 +270,7 @@
                 Los enlaces se pueden actualizar a medida que vaya completando nuevos cursos.
             </p>
             <div class="cards-grid">
-                <!-- Ejemplo: cambia el href al PDF real cuando lo subas -->
-                <article class="card">
+                <article class="card glass">
                     <h3>Certificado 1</h3>
                     <p class="card-subtitle">Nombre del curso / plataforma</p>
                     <p class="card-meta">Año</p>
@@ -251,7 +279,7 @@
                     </a>
                 </article>
 
-                <article class="card">
+                <article class="card glass">
                     <h3>Certificado 2</h3>
                     <p class="card-subtitle">Nombre del curso / plataforma</p>
                     <p class="card-meta">Año</p>
@@ -260,7 +288,7 @@
                     </a>
                 </article>
 
-                <article class="card">
+                <article class="card glass">
                     <h3>Otros certificados</h3>
                     <p>
                         Puedo añadir aquí nuevos certificados relacionados con
@@ -273,7 +301,7 @@
     </section>
 
     <!-- CONTACTO -->
-    <section id="contacto" class="section section-alt">
+    <section id="contacto" class="section section-alt" data-reveal>
         <div class="container contact-grid">
             <div>
                 <h2>Contacto</h2>
@@ -287,13 +315,13 @@
                     <li><strong>GitHub:</strong> <a href="https://github.com/aleexx1003" target="_blank">github.com/aleexx1003</a></li>
                 </ul>
             </div>
-            <div class="contact-box">
+            <div class="contact-box glass">
                 <p class="contact-highlight">
                     Actualmente abierto a oportunidades de prácticas, proyectos de fin de grado
                     y colaboraciones en desarrollo de software, consultoría tecnológica y calidad.
                 </p>
                 <p class="contact-note">
-                    Movilidad geográfica, carnet B y vehículo propio.
+                    Movilidad geográfica · Carnet B · Vehículo propio.
                 </p>
             </div>
         </div>
@@ -308,7 +336,25 @@
 </footer>
 
 <script>
+    // Año dinámico
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Scroll suave
+    document.documentElement.style.scrollBehavior = "smooth";
+
+    // Animaciones al hacer scroll (reveal)
+    const revealElems = document.querySelectorAll("[data-reveal]");
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.15 });
+
+    revealElems.forEach(el => observer.observe(el));
 </script>
 </body>
 </html>
+
