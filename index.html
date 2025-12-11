@@ -684,77 +684,70 @@
         if (!boardEl || !nextBtn || !resetBtn) return;
     
         // Tableros predefinidos (cada estado son 6 strings de 6 caracteres)
-        // R = coche rojo, A/B/C = otros coches, . = casilla vacía
+        // R = coche rojo (horizontal), A/C = coches verticales, . = casilla vacía
         // El coche rojo está en la fila 2 (tercera fila, índice 2)
+        // C es un coche vertical que baja para dejar libre la fila de salida.
         const states = [
+            // Estado 1: el coche rojo está bloqueado por C en la misma columna (C vertical)
             [
-                "AA....",
-                "..BB..",
-                "RR.CC.",
-                "......",
+                ".A....",
+                ".A.C..",
+                "RR.C..",
+                "...C..",
                 "......",
                 "......"
             ],
-            // B se mueve una casilla a la derecha
+            // Estado 2: C baja una casilla (sigue ocupando parte de la fila de salida)
             [
-                "AA....",
-                "...BB.",
-                "RR.CC.",
-                "......",
-                "......",
+                ".A....",
+                ".A....",
+                "RR.C..",
+                "...C..",
+                "...C..",
                 "......"
             ],
-            // C se desplaza una casilla a la derecha
+            // Estado 3: C baja del todo y deja libre la fila del coche rojo
             [
-                "AA....",
-                "...BB.",
-                "RR.C.C",
-                "......",
-                "......",
-                "......"
-            ],
-            // C baja una fila, dejando libre el camino
-            [
-                "AA....",
-                "...BB.",
+                ".A....",
+                ".A....",
                 "RR....",
-                "...CC.",
-                "......",
-                "......"
+                "...C..",
+                "...C..",
+                "...C.."
             ],
-            // El coche rojo empieza a avanzar hacia la salida
+            // Estado 4: el rojo empieza a avanzar
             [
-                "AA....",
-                "...BB.",
+                ".A....",
+                ".A....",
                 ".RR...",
-                "...CC.",
-                "......",
-                "......"
+                "...C..",
+                "...C..",
+                "...C.."
             ],
             [
-                "AA....",
-                "...BB.",
+                ".A....",
+                ".A....",
                 "..RR..",
-                "...CC.",
-                "......",
-                "......"
+                "...C..",
+                "...C..",
+                "...C.."
             ],
             [
-                "AA....",
-                "...BB.",
+                ".A....",
+                ".A....",
                 "...RR.",
-                "...CC.",
-                "......",
-                "......"
+                "...C..",
+                "...C..",
+                "...C.."
             ],
-            // Coche rojo en la salida
+            // Estado final: el coche rojo llega a la salida
             [
-                "AA....",
-                "...BB.",
+                ".A....",
+                ".A....",
                 "....RR",
-                "...CC.",
-                "......",
-                "......"
+                "...C..",
+                "...C..",
+                "...C.."
             ]
         ];
     
