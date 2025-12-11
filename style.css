@@ -1373,3 +1373,138 @@ body.is-loaded {
     opacity: 1;
     transform: translateY(0);
 }
+/* ===== Tarjetas 3D para la sección de certificados ===== */
+
+#certificados .cert-grid {
+    perspective: 1400px;
+    perspective-origin: 50% 40%;
+    gap: 1.8rem;
+}
+
+#certificados .card.glass {
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    background:
+        radial-gradient(circle at top left, rgba(56,189,248,0.22), transparent 55%),
+        radial-gradient(circle at bottom right, rgba(15,23,42,0.9), #020617);
+    border: 1px solid rgba(148,163,184,0.6);
+    box-shadow:
+        0 22px 50px rgba(15,23,42,0.9),
+        0 0 0 1px rgba(15,23,42,0.95);
+    transform-style: preserve-3d;
+    transform: perspective(1100px) rotateX(12deg) rotateY(-14deg) translateY(0);
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        border-color 0.25s ease,
+        background 0.35s ease;
+    backdrop-filter: blur(18px);
+}
+
+/* Borde de luz en el canto superior izquierdo */
+#certificados .card.glass::before {
+    content: "";
+    position: absolute;
+    inset: -20%;
+    background:
+        linear-gradient(135deg,
+            rgba(56,189,248,0.55),
+            rgba(129,140,248,0.0) 40%,
+            rgba(15,23,42,0.0) 70%);
+    opacity: 0.4;
+    mix-blend-mode: screen;
+    transform: translate3d(0, 0, -1px);
+    pointer-events: none;
+}
+
+/* Sombra "flotante" debajo de la tarjeta */
+#certificados .card.glass::after {
+    content: "";
+    position: absolute;
+    left: 8%;
+    right: 8%;
+    bottom: -24px;
+    height: 40px;
+    background: radial-gradient(ellipse at center, rgba(15,23,42,0.9), transparent 70%);
+    opacity: 0.9;
+    transform: translate3d(0, 0, -1px);
+    pointer-events: none;
+}
+
+#certificados .card.glass:hover {
+    transform: perspective(1100px) rotateX(6deg) rotateY(-4deg) translateY(-10px);
+    box-shadow:
+        0 32px 70px rgba(15,23,42,0.98),
+        0 0 0 1px rgba(56,189,248,0.6);
+    border-color: rgba(56,189,248,0.8);
+    background:
+        radial-gradient(circle at top left, rgba(56,189,248,0.32), transparent 55%),
+        radial-gradient(circle at bottom right, rgba(15,23,42,0.95), #020617);
+}
+
+/* Un pelín más de aire dentro de las tarjetas de certificados */
+#certificados .card.glass {
+    padding: 1.7rem 1.8rem;
+}
+
+#certificados .card.glass h3 {
+    font-size: 1.02rem;
+    margin-bottom: 0.35rem;
+}
+
+#certificados .card.glass .card-subtitle {
+    font-size: 0.9rem;
+    opacity: 0.95;
+}
+
+#certificados .card.glass .card-meta {
+    margin-bottom: 0.8rem;
+}
+
+#certificados .card.glass p {
+    font-size: 0.9rem;
+}
+
+/* Links dentro de certificados un poco más "chip" */
+#certificados .card.glass .card-link {
+    margin-top: 0.7rem;
+    padding: 0.25rem 0.6rem;
+    border-radius: 999px;
+    border: 1px solid rgba(56,189,248,0.35);
+    background: rgba(15,23,42,0.8);
+    font-size: 0.82rem;
+}
+
+#certificados .card.glass .card-link + .card-link {
+    margin-left: 0.3rem;
+}
+
+#certificados .card.glass .card-link:hover {
+    border-color: rgba(56,189,248,0.7);
+    text-decoration: none;
+}
+
+/* Modo claro: misma idea pero más suave */
+html[data-theme="light"] #certificados .card.glass {
+    background:
+        radial-gradient(circle at top left, rgba(56,189,248,0.18), transparent 55%),
+        radial-gradient(circle at bottom right, #e5e7eb, #f9fafb);
+    box-shadow:
+        0 22px 50px rgba(148,163,184,0.45),
+        0 0 0 1px rgba(148,163,184,0.6);
+    border-color: rgba(148,163,184,0.8);
+}
+
+html[data-theme="light"] #certificados .card.glass:hover {
+    box-shadow:
+        0 30px 70px rgba(148,163,184,0.55),
+        0 0 0 1px rgba(56,189,248,0.5);
+}
+
+/* En móvil, un poco menos agresivo el 3D para que no cante tanto */
+@media (max-width: 720px) {
+    #certificados .card.glass {
+        transform: perspective(900px) rotateX(6deg) rotateY(-6deg) translateY(0);
+    }
+}
