@@ -905,10 +905,12 @@ html[data-theme="light"] .glass {
 .skills-strip-track {
     display: flex;
     align-items: center;
-    gap: 2rem;           /* antes 1.5rem, por ejemplo */
-    animation: skills-scroll 28s linear infinite;
+    gap: 2rem;                    /* separación entre logos */
+    width: max-content;           /* se adapta al contenido (los dos bloques) */
+    animation: skills-scroll 30s linear infinite;
     will-change: transform;
 }
+
 
 
 /* Cada logo */
@@ -947,6 +949,7 @@ html[data-theme="light"] .skills-strip-item {
         transform: translateX(-50%);
     }
 }
+
 
 /* Modo claro: fondo más clarito pero mismo estilo */
 
