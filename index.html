@@ -404,7 +404,34 @@
     }, { threshold: 0.15 });
 
     revealElems.forEach(el => observer.observe(el));
+
+    // === Widget de frase con API pública ===
+    const quoteText = document.getElementById("dev-quote");
+    const quoteAuthor = document.getElementById("dev-quote-author");
+    const quoteBtn = document.getElementById("quote-btn");
+
+    async function loadQuote() {
+        try {
+            quoteText.textContent = "Cargando frase...";
+            quoteAuthor.textContent = "";
+
+            const res = await fetch("https://api.quotable.io/random?tags=technology,famous-quotes");
+            if (!res.ok) throw new Error("Error al obtener la frase");
+
+            const data = await res.json();
+            quoteText.textContent = data.content;
+            quoteAuthor.textContent = data.author ? `— ${data.author}` : "";
+        } catch (err) {
+            quoteText.textContent = "No se ha podido cargar la frase en este momento.";
+            quoteAuthor.textContent = "";
+        }
+    }
+
+    if (quoteBtn) {
+        quoteBtn.addEventListener("click", loadQuote);
+    }
 </script>
+
 </body>
 </html>
 
