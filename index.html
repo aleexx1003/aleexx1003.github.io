@@ -409,28 +409,54 @@
     const quoteText = document.getElementById("dev-quote");
     const quoteAuthor = document.getElementById("dev-quote-author");
     const quoteBtn = document.getElementById("quote-btn");
-
     async function loadQuote() {
+        const fallbackQuotes = [
+            {
+                content: "La mejor forma de aprender tecnología es construir cosas que te importen.",
+                author: "Anónimo"
+            },
+            {
+                content: "Hazlo simple primero. Si funciona simple, ya tendrás tiempo de complicarlo.",
+                author: "Mentalidad ingenieril"
+            },
+            {
+                content: "No se trata solo de programar, sino de entender el problema que quieres resolver.",
+                author: "Anónimo"
+            },
+            {
+                content: "Un buen diseño ahorra horas de desarrollo y semanas de mantenimiento.",
+                author: "Anónimo"
+            }
+        ];
+    
         try {
             quoteText.textContent = "Cargando frase...";
             quoteAuthor.textContent = "";
     
-            // Primero intentamos con tags de tecnología o frases famosas
-            let res = await fetch("https://api.quotable.io/random?tags=technology|famous-quotes");
+            // API pública muy estable (no requiere clave)
+            const res = await fetch("https://api.adviceslip.com/advice", {
+                cache: "no-store"       // para que no devuelva siempre la misma por caché
+            });
     
-            // Si no hay resultados o da error, pedimos una frase cualquiera
             if (!res.ok) {
-                res = await fetch("https://api.quotable.io/random");
+                throw new Error("Error al obtener la frase");
             }
     
             const data = await res.json();
-            quoteText.textContent = data.content;
-            quoteAuthor.textContent = data.author ? `— ${data.author}` : "";
+            const advice = data.slip && data.slip.advice
+                ? data.slip.advice
+                : "A veces un buen descanso también es parte del trabajo.";
+    
+            quoteText.textContent = `"${advice}"`;
+            quoteAuthor.textContent = "";   // esta API no tiene autor
         } catch (err) {
-            quoteText.textContent = "No se ha podido cargar la frase en este momento.";
-            quoteAuthor.textContent = "";
+            // Si la API falla, usamos una cita local
+            const q = fallbackQuotes[Math.floor(Math.random() * fallbackQuotes.length)];
+            quoteText.textContent = q.content;
+            quoteAuthor.textContent = q.author ? `— ${q.author}` : "";
         }
     }
+
 
 
     if (quoteBtn) {
