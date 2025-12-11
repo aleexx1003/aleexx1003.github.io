@@ -414,10 +414,15 @@
         try {
             quoteText.textContent = "Cargando frase...";
             quoteAuthor.textContent = "";
-
-            const res = await fetch("https://api.quotable.io/random?tags=technology,famous-quotes");
-            if (!res.ok) throw new Error("Error al obtener la frase");
-
+    
+            // Primero intentamos con tags de tecnología o frases famosas
+            let res = await fetch("https://api.quotable.io/random?tags=technology|famous-quotes");
+    
+            // Si no hay resultados o da error, pedimos una frase cualquiera
+            if (!res.ok) {
+                res = await fetch("https://api.quotable.io/random");
+            }
+    
             const data = await res.json();
             quoteText.textContent = data.content;
             quoteAuthor.textContent = data.author ? `— ${data.author}` : "";
@@ -426,6 +431,7 @@
             quoteAuthor.textContent = "";
         }
     }
+
 
     if (quoteBtn) {
         quoteBtn.addEventListener("click", loadQuote);
