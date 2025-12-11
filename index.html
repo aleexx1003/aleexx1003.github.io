@@ -28,10 +28,12 @@
             <a href="#habilidades">Habilidades</a>
             <a href="#certificados">Certificados</a>
             <a href="#contacto">Contacto</a>
-            <button id="theme-toggle" class="theme-toggle" aria-label="Cambiar tema de color">
-                <span class="theme-toggle-indicator"></span>
-            </button>
         </nav>
+
+        <!-- Botón de cambio de tema -->
+        <button id="theme-toggle" class="theme-toggle" aria-label="Cambiar tema de color">
+            <span class="theme-toggle-indicator"></span>
+        </button>
     </div>
 </header>
 
@@ -58,6 +60,9 @@
                 <a class="btn btn-outline" href="#contacto">
                     Contactar conmigo
                 </a>
+                <button class="btn btn-ghost" id="open-cv-modal">
+                    Ver CV en pantalla
+                </button>
             </div>
             <div class="hero-mini">
                 <span>Ciudad Real</span>
@@ -72,7 +77,6 @@
             <div class="hero-orbit orbit-2"></div>
             <div class="hero-card">
                 <div class="photo-frame">
-                    <!-- Recuerda subir img/foto-alex.jpg -->
                     <img src="img/FotoCV.jpeg" alt="Foto de Alex Salinero" />
                 </div>
                 <div class="hero-card-body">
@@ -264,94 +268,93 @@
             </div>
         </div>
     </section>
-    
-<!-- API PUBLICA -->
-<section id="inspiracion" class="section" data-reveal>
-    <div class="container">
-        <h2>Un poco de inspiración</h2>
-        <p class="section-intro">
-            De vez en cuando viene bien una frase para recordar por qué nos gusta
-            la tecnología y construir cosas. Puedes generar una nueva cuando quieras.
-        </p>
 
-        <div class="quote-widget glass">
-            <p id="dev-quote" class="quote-text">
-                Pulsa el botón para cargar una frase sobre tecnología o desarrollo.
+    <!-- API PUBLICA -->
+    <section id="inspiracion" class="section" data-reveal>
+        <div class="container">
+            <h2>Un poco de inspiración</h2>
+            <p class="section-intro">
+                De vez en cuando viene bien una frase para recordar por qué nos gusta
+                la tecnología y construir cosas. Puedes generar una nueva cuando quieras.
             </p>
-            <p id="dev-quote-author" class="quote-author"></p>
 
-            <button id="quote-btn" class="btn btn-outline quote-btn">
-                Nueva frase
-            </button>
+            <div class="quote-widget glass">
+                <p id="dev-quote" class="quote-text">
+                    Pulsa el botón para cargar una frase sobre tecnología o desarrollo.
+                </p>
+                <p id="dev-quote-author" class="quote-author"></p>
 
-            <p class="quote-note">
-                (Se carga desde una API pública).
+                <button id="quote-btn" class="btn btn-outline quote-btn">
+                    Nueva frase
+                </button>
+
+                <p class="quote-note">
+                    (Se carga desde una API pública; si falla, se muestra una frase local).
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CERTIFICADOS -->
+    <section id="certificados" class="section" data-reveal>
+        <div class="container">
+            <h2>Certificados</h2>
+            <p class="section-intro">
+                Aquí puedes consultar algunos de mis certificados y formaciones complementarias.
+                Los enlaces se pueden actualizar a medida que vaya completando nuevos cursos.
             </p>
+
+            <div class="cards-grid cert-grid">
+
+                <!-- CERTIFICADO PYTHON -->
+                <article class="card glass">
+                    <h3>Python – Cero a Experto (+86h)</h3>
+                    <p class="card-subtitle">Udemy · Junio 2025</p>
+                    <p class="card-meta">ID: UC-98b2bf10-d4e1-48ec-ac9e-5e2332899d3c</p>
+                    <p>
+                        Formación completa en Python, desde nivel básico a avanzado:
+                        fundamentos, POO y proyectos prácticos.
+                    </p>
+                    <a href="certificados/python-udemy.pdf" target="_blank" class="card-link">
+                        Ver certificado
+                    </a>
+                    <a href="https://www.udemy.com/certificate/UC-98b2bf10-d4e1-48ec-ac9e-5e2332899d3c/"
+                       target="_blank" class="card-link">
+                        Ver credencial en Udemy
+                    </a>
+                </article>
+
+                <!-- CERTIFICADO CUSTOMER EXPERIENCE -->
+                <article class="card glass">
+                    <h3>Advanced Certificate in Customer Experience Management</h3>
+                    <p class="card-subtitle">Udemy · Abril 2025</p>
+                    <p class="card-meta">ID: UC-a850746b-7ed2-44fa-be7e-6ecb4d83191</p>
+                    <p>
+                        Diseño y optimización de la experiencia de cliente:
+                        análisis de necesidades, journeys y soluciones centradas en el usuario.
+                    </p>
+                    <a href="certificados/customer-experience.pdf" target="_blank" class="card-link">
+                        Ver certificado
+                    </a>
+                    <a href="https://www.udemy.com/certificate/UC-a850746b-7ed2-44fa-be7e-6ecb4d83191/"
+                       target="_blank" class="card-link">
+                        Ver credencial en Udemy
+                    </a>
+                </article>
+
+                <!-- OTROS CERTIFICADOS -->
+                <article class="card glass card--wide">
+                    <h3>Otros certificados</h3>
+                    <p>
+                        Puedo añadir aquí nuevos certificados relacionados con calidad del software,
+                        metodologías ágiles, cloud o tecnologías específicas a medida que los vaya
+                        completando.
+                    </p>
+                </article>
+
+            </div>
         </div>
-    </div>
-</section>
-
-<!-- CERTIFICADOS -->
-<section id="certificados" class="section" data-reveal>
-    <div class="container">
-        <h2>Certificados</h2>
-        <p class="section-intro">
-            Aquí puedes consultar algunos de mis certificados y formaciones complementarias.
-            Los enlaces se pueden actualizar a medida que vaya completando nuevos cursos.
-        </p>
-
-        <div class="cards-grid cert-grid">
-
-            <!-- CERTIFICADO PYTHON -->
-            <article class="card glass">
-                <h3>Python – Cero a Experto (+86h)</h3>
-                <p class="card-subtitle">Udemy · Junio 2025</p>
-                <p class="card-meta">ID: UC-98b2bf10-d4e1-48ec-ac9e-5e2332899d3c</p>
-                <p>
-                    Formación completa en Python, desde nivel básico a avanzado:
-                    fundamentos, POO y proyectos prácticos.
-                </p>
-                <a href="certificados/python-udemy.pdf" target="_blank" class="card-link">
-                    Ver certificado
-                </a>
-                <a href="https://www.udemy.com/certificate/UC-98b2bf10-d4e1-48ec-ac9e-5e2332899d3c/"
-                   target="_blank" class="card-link">
-                    Ver credencial en Udemy
-                </a>
-            </article>
-
-            <!-- CERTIFICADO CUSTOMER EXPERIENCE -->
-            <article class="card glass">
-                <h3>Advanced Certificate in Customer Experience Management</h3>
-                <p class="card-subtitle">Udemy · Abril 2025</p>
-                <p class="card-meta">ID: UC-a850746b-7ed2-44fa-be7e-6ecb4d83191</p>
-                <p>
-                    Diseño y optimización de la experiencia de cliente:
-                    análisis de necesidades, journeys y soluciones centradas en el usuario.
-                </p>
-                <a href="certificados/customer-experience.pdf" target="_blank" class="card-link">
-                    Ver certificado
-                </a>
-                <a href="https://www.udemy.com/certificate/UC-a850746b-7ed2-44fa-be7e-6ecb4d83191/"
-                   target="_blank" class="card-link">
-                    Ver credencial en Udemy
-                </a>
-            </article>
-
-            <!-- OTROS CERTIFICADOS -->
-            <article class="card glass card--wide">
-                <h3>Otros certificados</h3>
-                <p>
-                    Puedo añadir aquí nuevos certificados relacionados con calidad del software,
-                    metodologías ágiles, cloud o tecnologías específicas a medida que los vaya
-                    completando.
-                </p>
-            </article>
-
-        </div>
-    </div>
-</section>
-
+    </section>
 
     <!-- CONTACTO -->
     <section id="contacto" class="section section-alt" data-reveal>
@@ -389,11 +392,28 @@
     </div>
 </footer>
 
+<!-- Modal CV -->
+<div id="cv-modal" class="modal-backdrop" aria-hidden="true">
+    <div class="modal">
+        <div class="modal-header">
+            <h3>Currículum Vitae</h3>
+            <button id="close-cv-modal" class="modal-close" aria-label="Cerrar CV">✕</button>
+        </div>
+        <div class="modal-body">
+            <iframe
+                src="archivos/AlexSalineroCV.pdf"
+                title="Currículum de Alex Salinero Moraleda"
+                loading="lazy">
+            </iframe>
+        </div>
+    </div>
+</div>
+
 <script>
     // Año dinámico
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    // Scroll suave
+    // Scroll suave (backup)
     document.documentElement.style.scrollBehavior = "smooth";
 
     // Animaciones al hacer scroll (reveal)
@@ -413,6 +433,7 @@
     const quoteText = document.getElementById("dev-quote");
     const quoteAuthor = document.getElementById("dev-quote-author");
     const quoteBtn = document.getElementById("quote-btn");
+
     async function loadQuote() {
         const fallbackQuotes = [
             {
@@ -432,51 +453,48 @@
                 author: "Anónimo"
             }
         ];
-    
+
         try {
             quoteText.textContent = "Cargando frase...";
             quoteAuthor.textContent = "";
-    
-            // API pública muy estable (no requiere clave)
+
             const res = await fetch("https://api.adviceslip.com/advice", {
-                cache: "no-store"       // para que no devuelva siempre la misma por caché
+                cache: "no-store"
             });
-    
+
             if (!res.ok) {
                 throw new Error("Error al obtener la frase");
             }
-    
+
             const data = await res.json();
             const advice = data.slip && data.slip.advice
                 ? data.slip.advice
                 : "A veces un buen descanso también es parte del trabajo.";
-    
+
             quoteText.textContent = `"${advice}"`;
-            quoteAuthor.textContent = "";   // esta API no tiene autor
+            quoteAuthor.textContent = "";
         } catch (err) {
-            // Si la API falla, usamos una cita local
             const q = fallbackQuotes[Math.floor(Math.random() * fallbackQuotes.length)];
             quoteText.textContent = q.content;
             quoteAuthor.textContent = q.author ? `— ${q.author}` : "";
         }
     }
 
-
-
     if (quoteBtn) {
         quoteBtn.addEventListener("click", loadQuote);
     }
+
     // =========================
-    // Selector de tema de color
+    // Selector de tema oscuro / claro
     // =========================
 
     const themeToggleBtn = document.getElementById("theme-toggle");
-    const themes = ["default", "purple", "green", "orange"];
+    const themeOptions = ["dark", "light"];
 
     function applyTheme(theme) {
         const root = document.documentElement;
 
-        if (theme === "default") {
+        if (theme === "dark") {
             root.removeAttribute("data-theme");
         } else {
             root.setAttribute("data-theme", theme);
@@ -486,10 +504,10 @@
 
     function loadSavedTheme() {
         const saved = localStorage.getItem("portfolio-theme");
-        if (saved && themes.includes(saved)) {
+        if (saved && themeOptions.includes(saved)) {
             applyTheme(saved);
         } else {
-            applyTheme("default");
+            applyTheme("dark");
         }
     }
 
@@ -497,20 +515,20 @@
 
     if (themeToggleBtn) {
         themeToggleBtn.addEventListener("click", () => {
-            const current = localStorage.getItem("portfolio-theme") || "default";
-            const currentIndex = themes.indexOf(current);
-            const nextTheme = themes[(currentIndex + 1) % themes.length];
-            applyTheme(nextTheme);
+            const current = localStorage.getItem("portfolio-theme") || "dark";
+            const next = current === "dark" ? "light" : "dark";
+            applyTheme(next);
         });
     }
-        // =========================
+
+    // =========================
     // Partículas de fondo
     // =========================
 
     (function initParticles() {
         const prefersReduced = window.matchMedia &&
             window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-        if (prefersReduced) return; // respetar usuarios que no quieren animaciones
+        if (prefersReduced) return;
 
         const canvas = document.getElementById("bg-particles");
         if (!canvas) return;
@@ -574,9 +592,42 @@
         draw();
     })();
 
+    // =========================
+    // Modal para ver el CV
+    // =========================
 
+    const openCvBtn = document.getElementById("open-cv-modal");
+    const cvModal = document.getElementById("cv-modal");
+    const closeCvBtn = document.getElementById("close-cv-modal");
+
+    function closeCvModal() {
+        if (!cvModal) return;
+        cvModal.classList.remove("active");
+        document.body.style.overflow = "";
+    }
+
+    if (openCvBtn && cvModal && closeCvBtn) {
+        openCvBtn.addEventListener("click", (e) => {
+            e.preventDefault();
+            cvModal.classList.add("active");
+            document.body.style.overflow = "hidden";
+        });
+
+        closeCvBtn.addEventListener("click", closeCvModal);
+
+        cvModal.addEventListener("click", (e) => {
+            if (e.target === cvModal) {
+                closeCvModal();
+            }
+        });
+
+        document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape" && cvModal.classList.contains("active")) {
+                closeCvModal();
+            }
+        });
+    }
 </script>
 
 </body>
 </html>
-
