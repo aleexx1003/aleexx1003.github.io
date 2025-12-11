@@ -1277,3 +1277,12 @@ html[data-theme="light"] #rush-board {
 html[data-theme="light"] .rush-note {
     color: #4b5563;
 }
+/* Justificación global del texto */
+p,
+li,
+span,
+td,
+th {
+    text-align: justify;
+    text-justify: inter-word;
+}
