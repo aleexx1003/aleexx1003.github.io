@@ -932,8 +932,8 @@ html[data-theme="light"] .skills-strip-item {
 
 /* Tamaño de los iconos -> MUY más pequeño */
 .skills-strip-item img {
-    width: 32px;
-    height: 32px;
+    width: 64px;
+    height: 64px;
     object-fit: contain;
     display: block;
 }
