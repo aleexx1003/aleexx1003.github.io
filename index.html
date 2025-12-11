@@ -685,44 +685,74 @@
     
         // Tableros predefinidos (cada estado son 6 strings de 6 caracteres)
         // R = coche rojo, A/B/C = otros coches, . = casilla vacía
+        // El coche rojo está en la fila 2 (tercera fila, índice 2)
         const states = [
             [
-                "..AA..",
+                "AA....",
+                "..BB..",
+                "RR.CC.",
+                "......",
+                "......",
+                "......"
+            ],
+            // B se mueve una casilla a la derecha
+            [
+                "AA....",
+                "...BB.",
+                "RR.CC.",
+                "......",
+                "......",
+                "......"
+            ],
+            // C se desplaza una casilla a la derecha
+            [
+                "AA....",
+                "...BB.",
+                "RR.C.C",
+                "......",
+                "......",
+                "......"
+            ],
+            // C baja una fila, dejando libre el camino
+            [
+                "AA....",
+                "...BB.",
                 "RR....",
-                "..BB..",
-                "..CC..",
+                "...CC.",
                 "......",
                 "......"
             ],
+            // El coche rojo empieza a avanzar hacia la salida
             [
-                "..AA..",
+                "AA....",
+                "...BB.",
                 ".RR...",
-                "..BB..",
-                "..CC..",
+                "...CC.",
                 "......",
                 "......"
             ],
             [
-                "..AA..",
+                "AA....",
+                "...BB.",
                 "..RR..",
-                "..BB..",
-                "..CC..",
+                "...CC.",
                 "......",
                 "......"
             ],
             [
-                "..AA..",
+                "AA....",
+                "...BB.",
                 "...RR.",
-                "..BB..",
-                "..CC..",
+                "...CC.",
                 "......",
                 "......"
             ],
+            // Coche rojo en la salida
             [
-                "..AA..",
+                "AA....",
+                "...BB.",
                 "....RR",
-                "..BB..",
-                "..CC..",
+                "...CC.",
                 "......",
                 "......"
             ]
@@ -768,6 +798,7 @@
         // Estado inicial
         renderState(currentIndex);
     })();
+
 
 </script>
 
