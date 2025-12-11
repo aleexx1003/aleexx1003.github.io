@@ -585,6 +585,36 @@ section {
     gap: 1.5rem;
     margin-top: 0.9rem;
 }
+/* Widget de frase con API */
+
+.quote-widget {
+    margin-top: 1.2rem;
+    padding: 1.5rem 1.6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.quote-text {
+    font-size: 0.95rem;
+    color: var(--text);
+}
+
+.quote-author {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-style: italic;
+}
+
+.quote-btn {
+    align-self: flex-start;
+    margin-top: 0.4rem;
+}
+
+.quote-note {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+}
 
 @media (min-width: 768px) {
     .cards-grid {
