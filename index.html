@@ -269,6 +269,49 @@
         </div>
     </section>
 
+    <!-- MINI RUSHHOUR INTERACTIVO -->
+    <section id="rushhour-demo" class="section" data-reveal>
+        <div class="container">
+            <h2>Mini Rush Hour interactivo</h2>
+            <p class="section-intro">
+                Pequeño ejemplo visual del tipo de proyectos que desarrollo: un solver del
+                puzzle Rush Hour. Aquí puedes ver cómo se resuelve paso a paso una instancia
+                sencilla del tablero.
+            </p>
+    
+            <div class="cards-grid">
+                <article class="card glass rush-card">
+                    <h3>Resolver el atasco</h3>
+                    <p class="card-subtitle">Objetivo: sacar el coche rojo hacia la derecha</p>
+    
+                    <div class="rush-board-wrapper">
+                        <div id="rush-board" class="rush-board" aria-label="Tablero Rush Hour"></div>
+                        <div class="rush-exit">Salida</div>
+                    </div>
+    
+                    <div class="rush-controls">
+                        <button class="btn btn-outline" id="rush-next">
+                            Siguiente movimiento
+                        </button>
+                        <button class="btn btn-ghost" id="rush-reset">
+                            Reiniciar
+                        </button>
+                        <span class="rush-step">
+                            Movimiento <span id="rush-step-number">1</span> /
+                            <span id="rush-step-total">1</span>
+                        </span>
+                    </div>
+    
+                    <p class="rush-note">
+                        En el proyecto completo el tablero se lee desde fichero y se resuelve
+                        con algoritmos de búsqueda informada (por ejemplo A*) y heurísticas diseñadas
+                        a medida, generando estadísticas de nodos explorados, profundidad, etc.
+                    </p>
+                </article>
+            </div>
+        </div>
+    </section>
+
     <!-- API PUBLICA -->
     <section id="inspiracion" class="section" data-reveal>
         <div class="container">
@@ -627,6 +670,105 @@
             }
         });
     }
+    // =========================
+    // Mini Rush Hour interactivo
+    // =========================
+    
+    (function initRushHour() {
+        const boardEl = document.getElementById("rush-board");
+        const nextBtn = document.getElementById("rush-next");
+        const resetBtn = document.getElementById("rush-reset");
+        const stepNumEl = document.getElementById("rush-step-number");
+        const stepTotalEl = document.getElementById("rush-step-total");
+    
+        if (!boardEl || !nextBtn || !resetBtn) return;
+    
+        // Tableros predefinidos (cada estado son 6 strings de 6 caracteres)
+        // R = coche rojo, A/B/C = otros coches, . = casilla vacía
+        const states = [
+            [
+                "..AA..",
+                "RR....",
+                "..BB..",
+                "..CC..",
+                "......",
+                "......"
+            ],
+            [
+                "..AA..",
+                ".RR...",
+                "..BB..",
+                "..CC..",
+                "......",
+                "......"
+            ],
+            [
+                "..AA..",
+                "..RR..",
+                "..BB..",
+                "..CC..",
+                "......",
+                "......"
+            ],
+            [
+                "..AA..",
+                "...RR.",
+                "..BB..",
+                "..CC..",
+                "......",
+                "......"
+            ],
+            [
+                "..AA..",
+                "....RR",
+                "..BB..",
+                "..CC..",
+                "......",
+                "......"
+            ]
+        ];
+    
+        let currentIndex = 0;
+        const totalSteps = states.length;
+        stepTotalEl.textContent = totalSteps.toString();
+    
+        function renderState(index) {
+            const state = states[index];
+            boardEl.innerHTML = "";
+    
+            for (let row = 0; row < 6; row++) {
+                for (let col = 0; col < 6; col++) {
+                    const cell = document.createElement("div");
+                    cell.className = "rush-cell";
+    
+                    const ch = state[row][col];
+                    if (ch !== "." && ch !== " ") {
+                        const car = document.createElement("div");
+                        car.className = "rush-car rush-car--" + ch;
+                        cell.appendChild(car);
+                    }
+    
+                    boardEl.appendChild(cell);
+                }
+            }
+    
+            stepNumEl.textContent = (index + 1).toString();
+        }
+    
+        nextBtn.addEventListener("click", () => {
+            currentIndex = (currentIndex + 1) % states.length;
+            renderState(currentIndex);
+        });
+    
+        resetBtn.addEventListener("click", () => {
+            currentIndex = 0;
+            renderState(currentIndex);
+        });
+    
+        // Estado inicial
+        renderState(currentIndex);
+    })();
+
 </script>
 
 </body>
