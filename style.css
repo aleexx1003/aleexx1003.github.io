@@ -46,7 +46,7 @@ html[data-theme="light"] .btn-ghost:hover {
 
 /* Chips de la parte de abajo del hero (Ciudad Real, Carnet B, etc.) */
 
-html[data-theme="light"] .hero-mini span {
+html[data-theme="light"] .-mini span {
     background: #e5e7eb;
     border-color: #cbd5f5;
     color: #111827;
@@ -376,7 +376,7 @@ html[data-theme="light"] .header {
 .hero-grid {
     display: grid;
     grid-template-columns: minmax(0, 1.7fr) minmax(0, 1.1fr);
-    gap: 2.7rem;
+    gap: 3.4rem;
     align-items: center;
 }
 
