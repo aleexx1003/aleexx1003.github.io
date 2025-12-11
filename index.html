@@ -12,6 +12,14 @@
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+<div id="preloader" class="preloader">
+    <div class="preloader-inner">
+        <div class="preloader-ring">
+            <div class="preloader-segment"></div>
+        </div>
+        <div class="preloader-logo">AS</div>
+    </div>
+</div>
 <canvas id="bg-particles"></canvas>
 <div class="bg-texture"></div>
 
@@ -877,6 +885,20 @@
         // Estado inicial
         renderState(currentIndex);
     })();
+    // =========================
+    // Preloader (0.7s aprox.)
+    // =========================
+    
+    window.addEventListener("load", () => {
+        const preloader = document.getElementById("preloader");
+        // pequeño delay para que se vea, pero sin molestar
+        setTimeout(() => {
+            if (preloader) {
+                preloader.classList.add("hidden");
+            }
+            document.body.classList.add("is-loaded");
+        }, 700); // 700 ms
+    });
 
 
 </script>
