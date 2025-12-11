@@ -72,6 +72,14 @@ html, body {
 }
 
 /* Textura y background global */
+/* Fondo de partículas */
+
+#bg-particles {
+    position: fixed;
+    inset: 0;
+    z-index: -3;
+    pointer-events: none;
+}
 
 .bg-texture {
     position: fixed;
