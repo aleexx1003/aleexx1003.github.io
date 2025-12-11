@@ -1084,12 +1084,6 @@ html[data-theme="light"] .modal-body {
     gap: 1rem;
 }
 
-.rush-board-wrapper {
-    position: relative;
-    display: inline-block;
-    padding-right: 0;         /* ya no necesitamos “aire extra” a la derecha */
-    margin-top: 0.8rem;
-}
 
 /* Tablero 6x6 */
 
@@ -1141,14 +1135,20 @@ html[data-theme="light"] #rush-board {
     background: linear-gradient(135deg, #a855f7, #7c3aed);
 }
 
-/* Etiqueta de salida */
+/* Contenedor tablero + etiqueta de salida */
+.rush-board-wrapper {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;      /* separación horizontal tablero-Salida */
+    margin-top: 0.8rem;
+}
+
+/* Etiqueta de salida pegada al tablero */
 .rush-exit {
-    position: absolute;
-    left: calc(100% + 0.6rem);                     /* justo a la derecha del grid */
-    top: calc(36px * 2 + 0.6rem + 8px);            /* alineado con la fila del coche rojo */
-    transform: translateY(-50%);
+    position: static;          /* nada absoluto, va en el flex */
     font-size: 0.75rem;
     color: var(--text-muted);
+    white-space: nowrap;
 }
 
 
