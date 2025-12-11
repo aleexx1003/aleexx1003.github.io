@@ -27,6 +27,9 @@
             <a href="#habilidades">Habilidades</a>
             <a href="#certificados">Certificados</a>
             <a href="#contacto">Contacto</a>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Cambiar tema de color">
+                <span class="theme-toggle-indicator"></span>
+            </button>
         </nav>
     </div>
 </header>
@@ -462,6 +465,44 @@
     if (quoteBtn) {
         quoteBtn.addEventListener("click", loadQuote);
     }
+    // =========================
+    // Selector de tema de color
+    // =========================
+
+    const themeToggleBtn = document.getElementById("theme-toggle");
+    const themes = ["default", "purple", "green", "orange"];
+
+    function applyTheme(theme) {
+        const root = document.documentElement;
+
+        if (theme === "default") {
+            root.removeAttribute("data-theme");
+        } else {
+            root.setAttribute("data-theme", theme);
+        }
+        localStorage.setItem("portfolio-theme", theme);
+    }
+
+    function loadSavedTheme() {
+        const saved = localStorage.getItem("portfolio-theme");
+        if (saved && themes.includes(saved)) {
+            applyTheme(saved);
+        } else {
+            applyTheme("default");
+        }
+    }
+
+    loadSavedTheme();
+
+    if (themeToggleBtn) {
+        themeToggleBtn.addEventListener("click", () => {
+            const current = localStorage.getItem("portfolio-theme") || "default";
+            const currentIndex = themes.indexOf(current);
+            const nextTheme = themes[(currentIndex + 1) % themes.length];
+            applyTheme(nextTheme);
+        });
+    }
+
 </script>
 
 </body>
