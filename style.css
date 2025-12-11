@@ -1146,11 +1146,12 @@ html[data-theme="light"] #rush-board {
 .rush-exit {
     position: absolute;
     right: 0.2rem;
-    top: calc(36px * 2 + 0.6rem + 8px); /* alineado con fila 3 */
+    top: calc(36px * 2 + 0.6rem + 8px); /* alineado con fila 3 (índice 2) */
     transform: translateY(-50%);
     font-size: 0.75rem;
     color: var(--text-muted);
 }
+
 
 /* Controles y texto */
 
