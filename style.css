@@ -875,8 +875,8 @@ html[data-theme="light"] .glass {
     overflow: hidden;
     border-radius: var(--radius-lg);
     padding: 0.6rem 0;
-    max-width: 760px;       /* ajusta si la quieres un pelín más ancha o estrecha */
-    margin: 0 auto;         /* centrado dentro del .container */
+    width: 100%;      /* ocupa todo el ancho del container */
+    margin: 0 auto;
 }
 
 /* Gradientes de desvanecido en los laterales */
@@ -905,10 +905,11 @@ html[data-theme="light"] .glass {
 .skills-strip-track {
     display: flex;
     align-items: center;
-    gap: 1.5rem;
+    gap: 2rem;           /* antes 1.5rem, por ejemplo */
     animation: skills-scroll 28s linear infinite;
     will-change: transform;
 }
+
 
 /* Cada logo */
 .skills-strip-item {
@@ -916,11 +917,18 @@ html[data-theme="light"] .glass {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 0.3rem;
-    border-radius: 999px;
-    background: rgba(15,23,42,0.95);
-    border: 1px solid rgba(148,163,184,0.4);
+    padding: 0;              /* sin margen extra alrededor */
+    border-radius: 0;
+    background: transparent; /* sin círculo */
+    border: none;
 }
+
+/* En modo claro tampoco añadimos fondo */
+html[data-theme="light"] .skills-strip-item {
+    background: transparent;
+    border: none;
+}
+
 
 /* Tamaño de los iconos -> MUY más pequeño */
 .skills-strip-item img {
@@ -941,10 +949,6 @@ html[data-theme="light"] .glass {
 }
 
 /* Modo claro: fondo más clarito pero mismo estilo */
-html[data-theme="light"] .skills-strip-item {
-    background: #f3f4f6;
-    border-color: rgba(148,163,184,0.6);
-}
 
 /* Respeto a usuarios con animaciones reducidas */
 @media (prefers-reduced-motion: reduce) {
