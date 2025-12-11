@@ -924,8 +924,8 @@ html[data-theme="light"] .glass {
 
 /* Tamaño de los iconos -> MUY más pequeño */
 .skills-strip-item img {
-    width: 28px;
-    height: 28px;
+    width: 32px;
+    height: 32px;
     object-fit: contain;
     display: block;
 }
