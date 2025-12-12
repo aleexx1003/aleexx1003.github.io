@@ -1302,16 +1302,15 @@ th {
 /* Fade-in general del contenido cuando se quite el preloader */
 
 body {
-  opacity: 0;
-  transform: translateY(4px);
-  transition: opacity 0.45s ease, transform 0.45s ease;
+    opacity: 0;
+    transform: translateY(4px);
+    transition: opacity 0.45s ease, transform 0.45s ease;
 }
 
 body.is-loaded {
-  opacity: 1;
-  transform: none; /* ✅ clave: NO translateY(0) */
+    opacity: 1;
+    transform: translateY(0);
 }
-
 /* ===== Tarjetas 3D suaves para la sección de certificados ===== */
 
 #certificados .cert-grid {
@@ -1449,108 +1448,3 @@ html[data-theme="light"] #certificados .card.glass:hover {
         transform: perspective(900px) rotateX(1deg) rotateY(-1deg) translateY(-4px);
     }
 }
-/* ===== MODAL CV (LIMPIO + FUNCIONAL) ===== */
-#cv-modal{
-  position: fixed;
-  inset: 0;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  padding: 16px;
-  background: rgba(2,6,23,.55);   /* más suave, deja ver tu fondo */
-  backdrop-filter: blur(10px);
-  z-index: 99999;
-}
-
-#cv-modal.is-open{ display: flex; }
-
-/* Caja modal */
-#cv-modal .modal{
-  position: relative;
-  z-index: 1;
-  width: min(1100px, 96vw);
-  height: min(82vh, 860px);
-  background: rgba(15,23,42,.95);
-  border: 1px solid rgba(148,163,184,.35);
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 30px 90px rgba(0,0,0,.55);
-  display: flex;
-  flex-direction: column;
-}
-
-/* Header */
-#cv-modal .modal-header{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap: 1rem;
-  padding: 12px 14px;
-  border-bottom: 1px solid rgba(148,163,184,.2);
-}
-
-#cv-modal .modal-header h3{
-  margin:0;
-  font-size: 1rem;
-  color: var(--text);
-}
-
-/* Close */
-#cv-modal .modal-close{
-  width: 38px;
-  height: 38px;
-  border-radius: 999px;
-  border: 1px solid rgba(148,163,184,.35);
-  background: rgba(2,6,23,.5);
-  color: var(--text);
-  cursor: pointer;
-  font-size: 20px;
-  line-height: 1;
-}
-
-/* Body */
-#cv-modal .modal-body{
-  flex: 1;
-  min-height: 0;
-  background: rgba(2,6,23,.25);
-  display: flex;
-  flex-direction: column;
-}
-
-#cv-modal iframe{
-  width:100%;
-  height:100%;
-  border:0;
-  display:block;
-}
-
-/* Fallback */
-#cv-modal .cv-fallback{
-  margin: 0;
-  padding: 10px 14px;
-  font-size: 0.85rem;
-  color: var(--text-muted);
-  border-top: 1px solid rgba(148,163,184,.15);
-}
-
-#cv-modal .cv-fallback a{
-  color: var(--accent);
-  text-decoration: none;
-}
-#cv-modal .cv-fallback a:hover{ text-decoration: underline; }
-
-/* Tema claro */
-html[data-theme="light"] #cv-modal{
-  background: rgba(2,6,23,.28);
-}
-html[data-theme="light"] #cv-modal .modal{
-  background: rgba(255,255,255,.98);
-}
-html[data-theme="light"] #cv-modal .modal-body{
-  background: rgba(243,244,246,.9);
-}
-html[data-theme="light"] #cv-modal .modal-close{
-  background: rgba(243,244,246,.9);
-  color: #111827;
-}
-
