@@ -1532,3 +1532,9 @@ html[data-theme="light"] #certificados .card.glass:hover {
   text-decoration: none;
 }
 .cv-fallback a:hover{ text-decoration: underline; }
+
+#cv-modal .modal{
+  position: relative;
+  z-index: 1;
+}
+
