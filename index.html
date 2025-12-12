@@ -68,9 +68,10 @@
                 <a class="btn btn-outline" href="#contacto">
                     Contactar conmigo
                 </a>
-                <button class="btn btn-ghost" id="open-cv-modal">
-                    Ver CV en pantalla
+                <button class="btn btn-outline" id="open-cv-modal" type="button">
+                  Ver CV en pantalla
                 </button>
+
             </div>
             <div class="hero-mini">
                 <span>Ciudad Real</span>
@@ -538,22 +539,24 @@
     </div>
 </footer>
 
-<!-- Modal CV -->
-<div id="cv-modal" class="modal-backdrop" aria-hidden="true">
-    <div class="modal">
+    <!-- Modal CV -->
+    <div id="cv-modal" class="modal-backdrop" aria-hidden="true">
+      <div class="modal" role="dialog" aria-modal="true" aria-labelledby="cv-title">
         <div class="modal-header">
-            <h3>Currículum Vitae</h3>
-            <button id="close-cv-modal" class="modal-close" aria-label="Cerrar CV">✕</button>
+          <h3 id="cv-title">Currículum Vitae</h3>
+          <button id="close-cv-modal" class="modal-close" aria-label="Cerrar CV" type="button">×</button>
         </div>
+    
         <div class="modal-body">
-            <iframe
-                src="archivos/AlexSalineroMoraleda_CV.pdf"
-                title="Currículum de Alex Salinero Moraleda"
-                loading="lazy">
-            </iframe>
+          <iframe
+            src="archivos/AlexSalineroMoraleda_CV.pdf"
+            title="Currículum de Alex Salinero Moraleda"
+            loading="lazy">
+          </iframe>
         </div>
+      </div>
     </div>
-</div>
+
 
 <script>
     // Año dinámico
@@ -741,38 +744,40 @@
     // =========================
     // Modal para ver el CV
     // =========================
-
-    const openCvBtn = document.getElementById("open-cv-modal");
-    const cvModal = document.getElementById("cv-modal");
-    const closeCvBtn = document.getElementById("close-cv-modal");
-
-    function closeCvModal() {
+      const cvModal = document.getElementById("cv-modal");
+      const openCvBtn = document.getElementById("open-cv-modal");
+      const closeCvBtn = document.getElementById("close-cv-modal");
+    
+      function openCvModal() {
         if (!cvModal) return;
-        cvModal.classList.remove("active");
-        document.body.style.overflow = "";
-    }
-
-    if (openCvBtn && cvModal && closeCvBtn) {
-        openCvBtn.addEventListener("click", (e) => {
-            e.preventDefault();
-            cvModal.classList.add("active");
-            document.body.style.overflow = "hidden";
-        });
-
-        closeCvBtn.addEventListener("click", closeCvModal);
-
+        cvModal.classList.add("is-open");
+        cvModal.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden"; // bloquea scroll
+      }
+    
+      function closeCvModal() {
+        if (!cvModal) return;
+        cvModal.classList.remove("is-open");
+        cvModal.setAttribute("aria-hidden", "true");
+        document.body.style.overflow = ""; // restaura scroll
+      }
+    
+      if (openCvBtn) openCvBtn.addEventListener("click", openCvModal);
+      if (closeCvBtn) closeCvBtn.addEventListener("click", closeCvModal);
+    
+      // Cerrar al clicar fuera del modal
+      if (cvModal) {
         cvModal.addEventListener("click", (e) => {
-            if (e.target === cvModal) {
-                closeCvModal();
-            }
+          if (e.target === cvModal) closeCvModal();
         });
-
-        document.addEventListener("keydown", (e) => {
-            if (e.key === "Escape" && cvModal.classList.contains("active")) {
-                closeCvModal();
-            }
-        });
-    }
+      }
+    
+      // Cerrar con ESC
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && cvModal?.classList.contains("is-open")) {
+          closeCvModal();
+        }
+      });
     // =========================
     // Mini Rush Hour interactivo
     // =========================
