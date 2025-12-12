@@ -1302,15 +1302,16 @@ th {
 /* Fade-in general del contenido cuando se quite el preloader */
 
 body {
-    opacity: 0;
-    transform: translateY(4px);
-    transition: opacity 0.45s ease, transform 0.45s ease;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 0.45s ease, transform 0.45s ease;
 }
 
 body.is-loaded {
-    opacity: 1;
-    transform: translateY(0);
+  opacity: 1;
+  transform: none; /* ✅ clave: NO translateY(0) */
 }
+
 /* ===== Tarjetas 3D suaves para la sección de certificados ===== */
 
 #certificados .cert-grid {
