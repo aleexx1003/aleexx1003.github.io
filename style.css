@@ -1309,7 +1309,7 @@ body {
 
 body.is-loaded {
     opacity: 1;
-    transform: translateY(0);
+    transform: none;   /* 🔥 IMPORTANTE */
 }
 /* ===== Tarjetas 3D suaves para la sección de certificados ===== */
 
