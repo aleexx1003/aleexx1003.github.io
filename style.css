@@ -620,7 +620,7 @@ html[data-theme="light"] .hero-card {
 .scroll-indicator {
     position: absolute;
     left: 50%;
-    bottom: 0.6rem;
+    bottom: 1.6rem;
     transform: translateX(-50%);
     display: flex;
     flex-direction: column;
