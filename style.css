@@ -1448,7 +1448,6 @@ html[data-theme="light"] #certificados .card.glass:hover {
         transform: perspective(900px) rotateX(1deg) rotateY(-1deg) translateY(-4px);
     }
 }
-/* ===== MODAL CV (ÚNICO) ===== */
 #cv-modal{
   position: fixed;
   inset: 0;
@@ -1465,13 +1464,9 @@ html[data-theme="light"] #certificados .card.glass:hover {
   display: flex;
 }
 
-/* Evita que reglas globales tipo [data-reveal] lo oculten */
-#cv-modal [data-reveal]{
-  opacity: 1 !important;
-  transform: none !important;
-}
-
 #cv-modal .modal{
+  position: relative;          /* 🔑 CLAVE */
+  z-index: 1;                  /* 🔑 CLAVE */
   width: min(1100px, 96vw);
   height: min(82vh, 860px);
   background: rgba(15,23,42,.95);
@@ -1481,60 +1476,5 @@ html[data-theme="light"] #certificados .card.glass:hover {
   box-shadow: 0 30px 90px rgba(0,0,0,.55);
   display: flex;
   flex-direction: column;
-}
-
-#cv-modal .modal-header{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding: 12px 14px;
-  border-bottom: 1px solid rgba(148,163,184,.2);
-}
-
-#cv-modal .modal-header h3{
-  margin:0;
-  font-size: 1rem;
-}
-
-#cv-modal .modal-close{
-  width: 38px;
-  height: 38px;
-  border-radius: 999px;
-  border: 1px solid rgba(148,163,184,.35);
-  background: rgba(2,6,23,.5);
-  color: #fff;
-  cursor: pointer;
-  font-size: 20px;
-  line-height: 1;
-}
-
-#cv-modal .modal-body{
-  flex: 1;
-  background: rgba(2,6,23,.25);
-  min-height: 0;
-}
-
-#cv-modal iframe{
-  width:100%;
-  height:100%;
-  border:0;
-  display:block;
-}
-.cv-fallback{
-  margin: 0;
-  padding: 10px 14px;
-  font-size: 0.85rem;
-  color: var(--text-muted);
-  border-top: 1px solid rgba(148,163,184,.15);
-}
-.cv-fallback a{
-  color: var(--accent);
-  text-decoration: none;
-}
-.cv-fallback a:hover{ text-decoration: underline; }
-
-#cv-modal .modal{
-  position: relative;
-  z-index: 1;
 }
 
