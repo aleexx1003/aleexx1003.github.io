@@ -1448,105 +1448,108 @@ html[data-theme="light"] #certificados .card.glass:hover {
         transform: perspective(900px) rotateX(1deg) rotateY(-1deg) translateY(-4px);
     }
 }
-/* ===== MODAL CV (ÚNICO Y BLINDADO) ===== */
+/* ===== MODAL CV (LIMPIO + FUNCIONAL) ===== */
 #cv-modal{
-  position: fixed !important;
-  inset: 0 !important;
-  display: none !important;
-  align-items: center !important;
-  justify-content: center !important;
-  padding: 16px !important;
-  background: rgba(2,6,23,.65) !important;
-  backdrop-filter: blur(10px) !important;
-  z-index: 2147483647 !important;   /* máximo práctico */
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background: rgba(2,6,23,.55);   /* más suave, deja ver tu fondo */
+  backdrop-filter: blur(10px);
+  z-index: 99999;
 }
 
-#cv-modal.is-open{
-  display: flex !important;
-}
-
-/* Por si alguna regla global lo toca */
-#cv-modal, #cv-modal *{
-  opacity: 1 !important;
-  visibility: visible !important;
-  transform: none !important;
-}
+#cv-modal.is-open{ display: flex; }
 
 /* Caja modal */
 #cv-modal .modal{
-  position: relative !important;
-  z-index: 2147483647 !important;
-  width: min(1100px, 96vw) !important;
-  height: min(82vh, 860px) !important;
-  min-height: 240px !important;
-  background: rgba(15,23,42,.96) !important;
-  border: 1px solid rgba(148,163,184,.35) !important;
-  border-radius: 16px !important;
-  overflow: hidden !important;
-  box-shadow: 0 30px 90px rgba(0,0,0,.55) !important;
-  display: flex !important;
-  flex-direction: column !important;
+  position: relative;
+  z-index: 1;
+  width: min(1100px, 96vw);
+  height: min(82vh, 860px);
+  background: rgba(15,23,42,.95);
+  border: 1px solid rgba(148,163,184,.35);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 30px 90px rgba(0,0,0,.55);
+  display: flex;
+  flex-direction: column;
 }
 
 /* Header */
 #cv-modal .modal-header{
-  display:flex !important;
-  align-items:center !important;
-  justify-content:space-between !important;
-  gap: 1rem !important;
-  padding: 12px 14px !important;
-  border-bottom: 1px solid rgba(148,163,184,.2) !important;
-  background: rgba(2,6,23,.35) !important;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap: 1rem;
+  padding: 12px 14px;
+  border-bottom: 1px solid rgba(148,163,184,.2);
 }
 
 #cv-modal .modal-header h3{
-  margin: 0 !important;
-  font-size: 1rem !important;
-  color: var(--text) !important;
+  margin:0;
+  font-size: 1rem;
+  color: var(--text);
 }
 
 /* Close */
 #cv-modal .modal-close{
-  width: 38px !important;
-  height: 38px !important;
-  border-radius: 999px !important;
-  border: 1px solid rgba(148,163,184,.35) !important;
-  background: rgba(2,6,23,.5) !important;
-  color: var(--text) !important;
-  cursor: pointer !important;
-  font-size: 20px !important;
-  line-height: 1 !important;
+  width: 38px;
+  height: 38px;
+  border-radius: 999px;
+  border: 1px solid rgba(148,163,184,.35);
+  background: rgba(2,6,23,.5);
+  color: var(--text);
+  cursor: pointer;
+  font-size: 20px;
+  line-height: 1;
 }
 
 /* Body */
 #cv-modal .modal-body{
-  flex: 1 !important;
-  min-height: 0 !important;
-  background: rgba(2,6,23,.15) !important;
-  display: flex !important;
-  flex-direction: column !important;
+  flex: 1;
+  min-height: 0;
+  background: rgba(2,6,23,.25);
+  display: flex;
+  flex-direction: column;
 }
 
 #cv-modal iframe{
-  width: 100% !important;
-  height: 100% !important;
-  border: 0 !important;
-  display: block !important;
+  width:100%;
+  height:100%;
+  border:0;
+  display:block;
 }
 
+/* Fallback */
 #cv-modal .cv-fallback{
-  margin: 0 !important;
-  padding: 10px 14px !important;
-  font-size: 0.85rem !important;
-  color: var(--text-muted) !important;
-  border-top: 1px solid rgba(148,163,184,.15) !important;
+  margin: 0;
+  padding: 10px 14px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  border-top: 1px solid rgba(148,163,184,.15);
 }
 
 #cv-modal .cv-fallback a{
-  color: var(--accent) !important;
-  text-decoration: none !important;
+  color: var(--accent);
+  text-decoration: none;
+}
+#cv-modal .cv-fallback a:hover{ text-decoration: underline; }
+
+/* Tema claro */
+html[data-theme="light"] #cv-modal{
+  background: rgba(2,6,23,.28);
+}
+html[data-theme="light"] #cv-modal .modal{
+  background: rgba(255,255,255,.98);
+}
+html[data-theme="light"] #cv-modal .modal-body{
+  background: rgba(243,244,246,.9);
+}
+html[data-theme="light"] #cv-modal .modal-close{
+  background: rgba(243,244,246,.9);
+  color: #111827;
 }
 
-#cv-modal .cv-fallback a:hover{
-  text-decoration: underline !important;
-}
