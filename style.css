@@ -1672,3 +1672,20 @@ html[data-theme="light"] #certificados .card.glass:hover {
   width: 100%;
   border-radius: 12px;
 }
+.projects-2col{
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+@media (min-width: 900px){
+  .projects-2col{
+    grid-template-columns: 1fr 1fr;
+    align-items: stretch;
+  }
+}
+
+/* ESIMedia mantiene el estilo de card y encaja como el RushHour */
+.esimedia-card .card-subtitle{
+  margin-bottom: .9rem;
+}
