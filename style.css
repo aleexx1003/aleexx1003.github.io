@@ -1527,3 +1527,87 @@ html[data-theme="light"] #certificados .card.glass:hover {
     transform: none;
   }
 }
+/* ===== RushHour + ESIMedia en paralelo ===== */
+.demo-grid{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.2rem;
+  align-items: stretch;
+}
+
+/* Que ambos “cards” tengan misma altura visual */
+.demo-grid > .card{
+  height: 100%;
+}
+
+/* En móvil: una columna */
+@media (max-width: 900px){
+  .demo-grid{
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===== ESIMedia card ===== */
+.esimedia-card{
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+}
+
+.esimedia-badge{
+  align-self: flex-start;
+  font-size: .72rem;
+  padding: .22rem .6rem;
+  border-radius: 999px;
+  border: 1px solid rgba(56,189,248,.45);
+  background: rgba(56,189,248,.12);
+  color: #e0f2fe;
+}
+
+.esimedia-desc{
+  color: var(--text-muted);
+  font-size: .9rem;
+}
+
+/* Tags (reutiliza .pill, pero mejor ajustadas aquí) */
+.esimedia-tags{
+  display: flex;
+  flex-wrap: wrap;
+  gap: .45rem;
+}
+
+/* Preview enmarcado */
+.esimedia-preview{
+  margin-top: .2rem;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(148,163,184,.25);
+  background: rgba(2,6,23,.25);
+  flex: 1;                 /* empuja botones hacia abajo */
+  min-height: 220px;       /* para igualar “peso visual” */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.esimedia-preview img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Botones abajo */
+.esimedia-actions{
+  display: flex;
+  flex-wrap: wrap;
+  gap: .7rem;
+  margin-top: .2rem;
+}
+
+.esimedia-mini-note{
+  font-size: .78rem;
+  color: var(--text-muted);
+  margin-top: .1rem;
+}
