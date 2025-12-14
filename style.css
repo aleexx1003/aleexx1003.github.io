@@ -1301,25 +1301,15 @@ th {
 }
 
 /* Fade-in general del contenido cuando se quite el preloader */
-
-.page{
-  position: relative;
-  z-index: 0;
+body {
   opacity: 0;
   transform: translateY(4px);
   transition: opacity 0.45s ease, transform 0.45s ease;
-  will-change: opacity, transform;
 }
 
-body.is-loaded .page{
+body.is-loaded {
   opacity: 1;
   transform: translateY(0);
-}
-
-/* body sin transform */
-body{
-  opacity: 1;
-  transform: none;
 }
 
 
