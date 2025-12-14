@@ -1731,3 +1731,27 @@ html[data-theme="light"] #certificados .card.glass:hover {
     grid-template-columns: 1fr;
   }
 }
+/* ===== Proyectos destacados: 50/50 + más gap ===== */
+.projects-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;  /* mitad y mitad */
+  gap: 2.2rem;                     /* más espacio entre cards */
+  align-items: stretch;
+}
+
+/* Responsive */
+@media (max-width: 900px){
+  .projects-grid{ grid-template-columns: 1fr; }
+}
+/* ===== Texto superior en Proyectos destacados: ancho completo ===== */
+#proyectos-destacados .section-intro{
+  max-width: none !important;   /* quita límites */
+  width: 100%;
+  margin-bottom: 1.4rem;        /* un pelín más de aire */
+}
+
+/* Evita cortes raros por palabras largas */
+#proyectos-destacados .section-intro{
+  overflow-wrap: anywhere;
+  hyphens: auto;
+}
