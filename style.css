@@ -1449,3 +1449,31 @@ html[data-theme="light"] #certificados .card.glass:hover {
         transform: perspective(900px) rotateX(1deg) rotateY(-1deg) translateY(-4px);
     }
 }
+/* ===== Hover "borde azul fino" SOLO para el carrusel de logos ===== */
+
+.skills-strip-item{
+  position: relative;
+  padding: 6px;                 /* un pelín de aire para que se vea el borde */
+  border-radius: 12px;
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+  border: 1px solid transparent; /* por defecto invisible */
+}
+
+/* Efecto al pasar el ratón */
+.skills-strip-item:hover{
+  border-color: rgba(56,189,248,.75);               /* borde fino azul */
+  box-shadow: 0 0 0 1px rgba(56,189,248,.25);       /* glow suave */
+  transform: translateY(-1px);                      /* micro-elevación */
+}
+
+/* Opcional: que el logo se vea un pelín más “vivo” al hover */
+.skills-strip-item:hover img{
+  filter: drop-shadow(0 0 6px rgba(56,189,248,.25));
+}
+
+/* En móvil no hay hover real, así que lo suavizamos */
+@media (max-width: 720px){
+  .skills-strip-item:hover{
+    transform: none;
+  }
+}
