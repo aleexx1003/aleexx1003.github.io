@@ -1302,8 +1302,9 @@ th {
 
 /* Fade-in general del contenido cuando se quite el preloader */
 
-/* Antes lo hacías en body: ahora en el wrapper */
 .page{
+  position: relative;
+  z-index: 0;
   opacity: 0;
   transform: translateY(4px);
   transition: opacity 0.45s ease, transform 0.45s ease;
@@ -1315,7 +1316,7 @@ body.is-loaded .page{
   transform: translateY(0);
 }
 
-/* body SIN transform para no romper fixed */
+/* body sin transform */
 body{
   opacity: 1;
   transform: none;
