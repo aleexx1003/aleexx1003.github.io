@@ -1302,16 +1302,25 @@ th {
 
 /* Fade-in general del contenido cuando se quite el preloader */
 
-body {
+/* Antes lo hacías en body: ahora en el wrapper */
+.page{
   opacity: 0;
   transform: translateY(4px);
   transition: opacity 0.45s ease, transform 0.45s ease;
+  will-change: opacity, transform;
 }
 
-body.is-loaded {
+body.is-loaded .page{
   opacity: 1;
   transform: translateY(0);
 }
+
+/* body SIN transform para no romper fixed */
+body{
+  opacity: 1;
+  transform: none;
+}
+
 
 
 /* ===== Tarjetas 3D suaves para la sección de certificados ===== */
