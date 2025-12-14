@@ -1765,15 +1765,23 @@ html[data-theme="light"] #certificados .card.glass:hover {
 .project-esimedia .esimedia-carousel{
   margin-top: 0;
 }
-/* Actívalo solo en desktop */
+
+
+
+
+/* Por defecto NO ocultamos cursor */
+.cursor-dot, .cursor-ring { display: none; }
+
 @media (hover: hover) and (pointer: fine) {
-  html { cursor: none; }
+  html.custom-cursor { cursor: none; }
+  html.custom-cursor a,
+  html.custom-cursor button,
+  html.custom-cursor [role="button"],
+  html.custom-cursor .btn { cursor: none; }
 
-  a, button, [role="button"], .btn {
-    cursor: none;
-  }
-
-  .cursor-dot, .cursor-ring{
+  html.custom-cursor .cursor-dot,
+  html.custom-cursor .cursor-ring {
+    display: block;
     position: fixed;
     left: 0; top: 0;
     pointer-events: none;
@@ -1781,13 +1789,13 @@ html[data-theme="light"] #certificados .card.glass:hover {
     transform: translate(-50%, -50%);
   }
 
-  .cursor-dot{
+  html.custom-cursor .cursor-dot{
     width: 6px; height: 6px;
     border-radius: 999px;
     background: rgba(56,189,248,0.95);
   }
 
-  .cursor-ring{
+  html.custom-cursor .cursor-ring{
     width: 34px; height: 34px;
     border-radius: 999px;
     border: 1px solid rgba(56,189,248,0.45);
@@ -1796,9 +1804,10 @@ html[data-theme="light"] #certificados .card.glass:hover {
     transition: width .15s ease, height .15s ease, border-color .15s ease, background .15s ease;
   }
 
-  .cursor-hover .cursor-ring{
+  html.custom-cursor.cursor-hover .cursor-ring{
     width: 46px; height: 46px;
     border-color: rgba(56,189,248,0.7);
     background: rgba(56,189,248,0.12);
   }
 }
+
