@@ -371,36 +371,72 @@
                 sencilla del tablero.
             </p>
     
-            <div class="cards-grid">
-                <article class="card glass rush-card">
-                    <h3>Resolver el atasco</h3>
-                    <p class="card-subtitle">Objetivo: sacar el coche rojo hacia la derecha</p>
-    
-                    <div class="rush-board-wrapper">
-                        <div id="rush-board" class="rush-board" aria-label="Tablero Rush Hour"></div>
-                        <div class="rush-exit">Salida</div>
-                    </div>
-    
-                    <div class="rush-controls">
-                        <button class="btn btn-outline" id="rush-next">
-                            Siguiente movimiento
-                        </button>
-                        <button class="btn btn-ghost" id="rush-reset">
-                            Reiniciar
-                        </button>
-                        <span class="rush-step">
-                            Movimiento <span id="rush-step-number">1</span> /
-                            <span id="rush-step-total">1</span>
-                        </span>
-                    </div>
-    
-                    <p class="rush-note">
-                        En el proyecto completo el tablero se lee desde fichero y se resuelve
-                        con algoritmos de búsqueda informada (por ejemplo A*) y heurísticas diseñadas
-                        a medida, generando estadísticas de nodos explorados, profundidad, etc.
-                    </p>
-                </article>
+            <div class="demo-grid">
+              <!-- IZQUIERDA: RushHour -->
+              <article class="card glass rush-card">
+                <h3>Resolver el atasco</h3>
+                <p class="card-subtitle">Objetivo: sacar el coche rojo hacia la derecha</p>
+            
+                <div class="rush-board-wrapper">
+                  <div id="rush-board" class="rush-board" aria-label="Tablero Rush Hour"></div>
+                  <div class="rush-exit">Salida</div>
+                </div>
+            
+                <div class="rush-controls">
+                  <button class="btn btn-outline" id="rush-next">
+                    Siguiente movimiento
+                  </button>
+                  <button class="btn btn-ghost" id="rush-reset">
+                    Reiniciar
+                  </button>
+                  <span class="rush-step">
+                    Movimiento <span id="rush-step-number">1</span> /
+                    <span id="rush-step-total">1</span>
+                  </span>
+                </div>
+            
+                <p class="rush-note">
+                  En el proyecto completo el tablero se lee desde fichero y se resuelve
+                  con algoritmos de búsqueda informada (por ejemplo A*) y heurísticas diseñadas
+                  a medida, generando estadísticas de nodos explorados, profundidad, etc.
+                </p>
+              </article>
+            
+              <!-- DERECHA: ESIMedia -->
+              <article class="card glass esimedia-card">
+                <div class="esimedia-badge">Proyecto destacado</div>
+            
+                <h3>ESIMedia</h3>
+                <p class="card-subtitle">Plataforma tipo Netflix (contenido + usuarios + seguridad)</p>
+            
+                <p class="esimedia-desc">
+                  App para subir y ver contenido, registro/login, gestión de usuarios (crear, eliminar, bloquear),
+                  roles de administración, base de datos y control de acceso.
+                </p>
+            
+                <div class="esimedia-tags">
+                  <span class="pill">Auth & Roles</span>
+                  <span class="pill">Admin</span>
+                  <span class="pill">BD</span>
+                  <span class="pill">Seguridad</span>
+                </div>
+            
+                <div class="esimedia-preview">
+                  <!-- Pon aquí una imagen (súper recomendable) -->
+                  <img src="img/esimedia/preview.png" alt="Vista previa ESIMedia">
+                </div>
+            
+                <div class="esimedia-actions">
+                  <a class="btn btn-primary" href="#contacto">Pedir demo</a>
+                  <a class="btn btn-outline" href="#experiencia">Ver en proyectos</a>
+                </div>
+            
+                <p class="esimedia-mini-note">
+                  (Vista de ejemplo / mockup para mostrar el producto).
+                </p>
+              </article>
             </div>
+
         </div>
     </section>
 
