@@ -404,40 +404,38 @@
             
               <!-- DERECHA: ESIMedia -->
               <article class="card glass esimedia-card">
-                <div class="esimedia-badge">Proyecto destacado</div>
-            
-                <h3>ESIMedia</h3>
-                <p class="card-subtitle">Plataforma tipo Netflix (contenido + usuarios + seguridad)</p>
-            
-                <p class="esimedia-desc">
-                  App para subir y ver contenido, registro/login, gestión de usuarios (crear, eliminar, bloquear),
-                  roles de administración, base de datos y control de acceso.
-                </p>
-            
-                <div class="esimedia-tags">
-                  <span class="pill">Auth & Roles</span>
-                  <span class="pill">Admin</span>
-                  <span class="pill">BD</span>
-                  <span class="pill">Seguridad</span>
+                <div class="esimedia-card">
+                
+                  <h3 class="esimedia-title">ESIMedia</h3>
+                  <p class="esimedia-desc">
+                    Plataforma tipo Netflix para gestión y visualización de contenido,
+                    administración de usuarios, seguridad y base de datos propia.
+                  </p>
+                
+                  <!-- Carrusel de imágenes -->
+                  <div class="esimedia-carousel">
+                    <div class="esimedia-track" id="esimediaTrack">
+                      <img src="img/esimedia/Nombre.jpeg" alt="ESIMedia - Nombre">
+                      <img src="img/esimedia/Portada.jpeg" alt="ESIMedia - Portada">
+                      <img src="img/esimedia/Catalogo.jpeg" alt="ESIMedia - Catálogo">
+                      <img src="img/esimedia/Perfiles.jpeg" alt="ESIMedia - Perfiles">
+                      <img src="img/esimedia/Estadisticas.jpeg" alt="ESIMedia - Estadísticas">
+                    </div>
+                
+                    <button class="esimedia-btn prev" id="esimediaPrev">‹</button>
+                    <button class="esimedia-btn next" id="esimediaNext">›</button>
+                  </div>
+                
+                  <!-- Vídeo demo -->
+                  <div class="esimedia-video">
+                    <video controls preload="metadata">
+                      <source src="img/esimedia/VideoDemo.mp4" type="video/mp4">
+                      Tu navegador no soporta vídeo.
+                    </video>
+                  </div>
+                
                 </div>
-            
-                <div class="esimedia-preview">
-                  <!-- Pon aquí una imagen (súper recomendable) -->
-                  <img src="img/esimedia/preview.png" alt="Vista previa ESIMedia">
-                </div>
-            
-                <div class="esimedia-actions">
-                  <a class="btn btn-primary" href="#contacto">Pedir demo</a>
-                  <a class="btn btn-outline" href="#experiencia">Ver en proyectos</a>
-                </div>
-            
-                <p class="esimedia-mini-note">
-                  (Vista de ejemplo / mockup para mostrar el producto).
-                </p>
-              </article>
-            </div>
 
-        </div>
     </section>
 
     <!-- API PUBLICA -->
@@ -928,6 +926,19 @@
             document.body.classList.add("is-loaded");
         }, 700); // 700 ms
     });
+    let index = 0;
+    const track = document.getElementById("esimediaTrack");
+    const slides = track.children.length;
+    
+    document.getElementById("esimediaNext").onclick = () => {
+      index = (index + 1) % slides;
+      track.style.transform = `translateX(-${index * 100}%)`;
+    };
+    
+    document.getElementById("esimediaPrev").onclick = () => {
+      index = (index - 1 + slides) % slides;
+      track.style.transform = `translateX(-${index * 100}%)`;
+    };
 
 
 </script>
