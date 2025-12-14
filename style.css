@@ -1756,7 +1756,12 @@ html[data-theme="light"] #certificados .card.glass:hover {
   hyphens: auto;
 }
 /* Espacio entre descripción y carrusel en ESIMedia */
-/* Espacio entre el primer párrafo y el bloque siguiente dentro de esa card */
-.esimedia-card p + div{
-  margin-top: 16px;
+/* Espacio entre el texto (card-subtitle) y el carrusel de ESIMedia */
+.project-esimedia .card-subtitle{
+  margin-bottom: 16px; /* ajusta: 12-24px */
+}
+
+/* (opcional) por si otro CSS te pisa el margin del párrafo */
+.project-esimedia .esimedia-carousel{
+  margin-top: 0;
 }
