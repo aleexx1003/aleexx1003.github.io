@@ -1477,3 +1477,53 @@ html[data-theme="light"] #certificados .card.glass:hover {
     transform: none;
   }
 }
+/* ===== Hover "borde azul fino" para TODAS las tarjetas (sin romper 3D) ===== */
+
+/* Aplica a tus bloques tipo tarjeta */
+.glass,
+.card.glass,
+.skills-group.glass,
+.timeline-item.glass,
+.pill-box.glass,
+.quote-widget.glass,
+.contact-box.glass,
+.rush-card.glass,
+.skills-strip.glass{
+  transition: border-color .18s ease, box-shadow .18s ease, transform .18s ease;
+}
+
+/* Efecto seleccionado (borde fino + glow suave) */
+.glass:hover,
+.card.glass:hover,
+.skills-group.glass:hover,
+.timeline-item.glass:hover,
+.pill-box.glass:hover,
+.quote-widget.glass:hover,
+.contact-box.glass:hover,
+.rush-card.glass:hover,
+.skills-strip.glass:hover{
+  border-color: rgba(56,189,248,.65);
+  box-shadow:
+    var(--shadow-soft),
+    0 0 0 1px rgba(56,189,248,.22);
+}
+
+/* Opcional: micro-elevación solo en las tarjetas que NO tienen ya un transform 3D fuerte */
+.skills-group.glass:hover,
+.timeline-item.glass:hover,
+.pill-box.glass:hover,
+.quote-widget.glass:hover,
+.contact-box.glass:hover{
+  transform: translateY(-2px);
+}
+
+/* Móvil: sin “saltitos” */
+@media (max-width: 720px){
+  .skills-group.glass:hover,
+  .timeline-item.glass:hover,
+  .pill-box.glass:hover,
+  .quote-widget.glass:hover,
+  .contact-box.glass:hover{
+    transform: none;
+  }
+}
