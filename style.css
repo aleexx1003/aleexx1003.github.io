@@ -1756,6 +1756,7 @@ html[data-theme="light"] #certificados .card.glass:hover {
   hyphens: auto;
 }
 /* Espacio entre descripción y carrusel en ESIMedia */
-.card-subtitle .esimedia-carousel{
+/* Espacio entre el primer párrafo y el bloque siguiente dentro de esa card */
+.esimedia-card p + div{
   margin-top: 16px;
 }
