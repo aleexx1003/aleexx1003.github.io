@@ -1757,5 +1757,5 @@ html[data-theme="light"] #certificados .card.glass:hover {
 }
 /* Espacio entre descripción y carrusel en ESIMedia */
 .esimedia-card .esimedia-carousel{
-  margin-top: 16px;
+  margin-top: 32px;
 }
