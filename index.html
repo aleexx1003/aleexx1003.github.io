@@ -944,6 +944,41 @@
       index = (index - 1 + slides) % slides;
       track.style.transform = `translateX(-${index * 100}%)`;
     };
+    
+    // Cursor pro (dot + ring)
+    (() => {
+      const dot = document.getElementById("cursorDot");
+      const ring = document.getElementById("cursorRing");
+      if (!dot || !ring) return;
+    
+      // Solo desktop
+      const finePointer = matchMedia("(hover: hover) and (pointer: fine)").matches;
+      if (!finePointer) return;
+    
+      let x = 0, y = 0, rx = 0, ry = 0;
+    
+      window.addEventListener("mousemove", (e) => {
+        x = e.clientX; y = e.clientY;
+        dot.style.transform = `translate(${x}px, ${y}px)`;
+      });
+    
+      // ring con “follow” suave
+      function animate() {
+        rx += (x - rx) * 0.15;
+        ry += (y - ry) * 0.15;
+        ring.style.transform = `translate(${rx}px, ${ry}px)`;
+        requestAnimationFrame(animate);
+      }
+      animate();
+    
+      const hoverables = "a, button, .btn, [role='button'], input, textarea, select, label";
+      document.addEventListener("mouseover", (e) => {
+        if (e.target.closest(hoverables)) document.documentElement.classList.add("cursor-hover");
+      });
+      document.addEventListener("mouseout", (e) => {
+        if (e.target.closest(hoverables)) document.documentElement.classList.remove("cursor-hover");
+      });
+    })();
 
 
 </script>
