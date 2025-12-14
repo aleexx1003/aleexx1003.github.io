@@ -1304,12 +1304,15 @@ th {
 
 body {
   opacity: 0;
-  transition: opacity 0.45s ease;
+  transform: translateY(4px);
+  transition: opacity 0.45s ease, transform 0.45s ease;
 }
 
 body.is-loaded {
   opacity: 1;
+  transform: translateY(0);
 }
+
 
 /* ===== Tarjetas 3D suaves para la sección de certificados ===== */
 
