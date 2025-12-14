@@ -174,11 +174,14 @@ html, body{
   pointer-events: none;
 }
 .bg-texture{
-  position: fixed;
-  inset: 0;
-  z-index: 0;          /* <-- antes -2 */
-  pointer-events: none;
+  background:
+    radial-gradient(circle at 10% 20%, rgba(56,189,248,0.22) 0, transparent 45%),
+    radial-gradient(circle at 80% 0%, rgba(59,130,246,0.22) 0, transparent 55%),
+    radial-gradient(circle at 0% 100%, rgba(45,212,191,0.18) 0, transparent 45%),
+    radial-gradient(circle at 100% 100%, rgba(248,250,252,0.07) 0, transparent 50%),
+    linear-gradient(135deg, #020617 0, #020617 40%, #020617 100%);
 }
+
 
 /* Textura más clara en tema claro */
 html[data-theme="light"] .bg-texture {
